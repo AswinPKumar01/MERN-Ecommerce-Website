@@ -21,6 +21,8 @@ import { useSelector } from "react-redux";
 import Profile from "./pages/Profile";
 import About from "./pages/About";
 import CRUD from "./pages/CRUD";
+import { inject } from "@vercel/analytics";
+inject();
 
 const App = () => {
   const user = useSelector((state) => state.user.currentUser);
