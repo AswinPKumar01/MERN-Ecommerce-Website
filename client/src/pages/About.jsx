@@ -8,18 +8,42 @@ const MainContainer = styled.div`
 `;
 
 const Container = styled.div`
-  text-align: center;
   font-weight: bold;
-  font-color: black;
   font-size: 30px;
   margin-top: 60px;
 `;
+
+const TeamInfo = styled.div`
+  margin-top: 20px;
+  font-size: 18px;
+`;
+
 const About = () => {
   return (
     <MainContainer>
       <Navbar />
       <Banner />
-      <Container>THIS IS THE ABOUT PAGE</Container>
+      <Container>
+        <div>Team no: 428</div>
+        <TeamInfo>
+          <div>Members:</div>
+          <ul>
+            <li>Gangi Rakshith Raj</li>
+            <li>Dipti Mahakalkar</li>
+            <li>Sarath Rajendran</li>
+            <li>Aniket Sharma</li>
+            <li>Aswin P Kumar</li>
+          </ul>
+          <p>
+            We are students of VIT Bhopal, pursuing Computer Science and
+            Engineering.
+          </p>
+          <p>
+            This website is created as a part of the Ethnus MERN Full Stack
+            Internship.
+          </p>
+        </TeamInfo>
+      </Container>
     </MainContainer>
   );
 };

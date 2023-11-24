@@ -95,7 +95,7 @@ const Input = styled.input`
 
 const IconBadgeLink = styled(Link)`
   ${commonLinkStyles}
-  margin-right: 7px;
+  margin-left:20px;
   font-size: 14px;
   color: white;
   text-decoration: none;
@@ -155,11 +155,6 @@ const Navbar = () => {
               LOGOUT
             </AuthLink>
           </AuthOptions>
-
-          <SearchCont>
-            <Input placeholder="Search" />
-            <Search style={{ color: "white", fontSize: 22 }} />
-          </SearchCont>
 
           <IconBadgeLink onClick={handleUserIconClick}>
             <Badge>
