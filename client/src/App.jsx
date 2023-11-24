@@ -15,7 +15,8 @@ import PaySuccess from "./components/PaySuccess";
 import Navbar from "./components/Navbar";
 import Banner from "./components/Banner";
 import BuyPage from "./pages/BuyPage";
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { useSelector } from "react-redux";
 import Profile from "./pages/Profile";
 import About from "./pages/About";
@@ -46,6 +47,7 @@ const App = () => {
           element={user ? <Navigate to="/" /> : <Register />}
         />
       </Routes>
+      <ToastContainer />
     </Router>
   );
 };

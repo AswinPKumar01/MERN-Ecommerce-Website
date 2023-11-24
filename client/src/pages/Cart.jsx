@@ -10,7 +10,7 @@ import { removeProduct } from "../redux/cartRedux"; // Update the path to your c
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import Navbar from "../components/Navbar";
 import Banner from "../components/Banner";
-// import { resetCartTotal } from "../redux/cartRedux"; // Import the action creator
+import { resetCartTotal } from "../redux/cartRedux"; // Import the action creator
 
 const KEY =
   "pk_test_51OEykISEe8t9vYpZg5VXosDFnot5T6eLp2B4PpNUAahj8yaUHvEfNhfWF8nKvFK6DvEgqfvSMl00BW5RerG0lyFv00X1GtsGky";
@@ -170,14 +170,14 @@ const Button = styled.button`
   font-weight: 600;
 `;
 
-// const RButton = styled.button`
-//   width: 100%;
-//   padding: 10px;
-//   background-color: white;
-//   color: white;
-//   font-weight: 600;
-//   border: none;
-// `;
+const RButton = styled.button`
+  width: 100%;
+  padding: 10px;
+  background-color: white;
+  color: white;
+  font-weight: 600;
+  border: none;
+`;
 
 const RemoveIconContainer = styled.div`
   border: 0.5px solid grey;
@@ -233,10 +233,10 @@ const Cart = () => {
     dispatch(removeProduct(productId));
   };
 
-  // const handleResetTotal = () => {
-  //   // Dispatch the action to reset the cart total
-  //   dispatch(resetCartTotal());
-  // };
+  const handleResetTotal = () => {
+    // Dispatch the action to reset the cart total
+    dispatch(resetCartTotal());
+  };
   return (
     <Container>
       <Navbar />
@@ -317,7 +317,7 @@ const Cart = () => {
             >
               <Button>CHECKOUT NOW</Button>
             </StripeCheckout>
-            {/* <RButton onClick={handleResetTotal}>RESET CART TOTAL</RButton> */}
+            <RButton onClick={handleResetTotal}>RESET CART TOTAL</RButton>
           </Summary>
         </Bottom>
       </Wrapper>

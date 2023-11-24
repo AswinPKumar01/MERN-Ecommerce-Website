@@ -4,6 +4,7 @@ import Badge from "@mui/material/Badge";
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styled, { css } from "styled-components";
+import { toast } from "react-toastify";
 import { mobile } from "../responsive";
 import { useSelector, useDispatch } from "react-redux";
 import { logoutUser } from "../redux/apiCalls";
@@ -123,10 +124,24 @@ const Navbar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate(); // Use useNavigate instead of useHistory
 
-  const handleLogout = (event) => {
+  const handleLogout = async (event) => {
     event.preventDefault();
-    console.log("Logging out...");
-    logoutUser(dispatch); // Assuming you have a logout function in your Redux actions
+    try {
+      await logoutUser(dispatch);
+      toast.success("You have been successfully logged out.", {
+        position: "top-right",
+        autoClose: false, // Adjust the duration as needed (in milliseconds)
+      });
+      // Navigate to the home page or any other page after successful logout
+      // Replace '/home' with the desired route
+      navigate("/");
+    } catch (error) {
+      toast.error("Logout Unsuccessful! Something went wrong...", {
+        position: "top-right",
+        autoClose: false, // Adjust the duration as needed (in milliseconds)
+      });
+      console.error("Logout error:", error);
+    }
   };
 
   const handleUserIconClick = () => {
@@ -143,7 +158,7 @@ const Navbar = () => {
         <CenterDiv>
           <LinkOption to="/">HOME</LinkOption>
           <LinkOption to="/buy">BUY</LinkOption>
-          <LinkOption to="/crud">PRODUCT</LinkOption>
+          <LinkOption to="/crud">DASHBOARD</LinkOption>
           <LinkOption to="/about">ABOUT US</LinkOption>
         </CenterDiv>
 

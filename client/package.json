@@ -24,6 +24,7 @@
     "react-router-dom": "^6.19.0",
     "react-scripts": "^3.0.1",
     "react-stripe-checkout": "^2.6.3",
+    "react-toastify": "^9.0.0",
     "redux-persist": "^6.0.0",
     "styled-components": "^6.1.1",
     "web-vitals": "^1.0.1"

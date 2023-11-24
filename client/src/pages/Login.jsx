@@ -4,6 +4,7 @@ import { useState } from "react";
 import { login } from "../redux/apiCalls";
 import React from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa"; // Import icons for eye and eye-slash
+import { toast } from "react-toastify";
 
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
@@ -111,7 +112,16 @@ const Login = () => {
 
   const handleClick = (e) => {
     e.preventDefault();
-    login(dispatch, { username, password });
+    login(dispatch, { username, password })
+      .then(() => {
+        toast.success(`Welcome, ${username}!`, { position: "top-right" });
+      })
+      .catch((error) => {
+        toast.error("Login Unsuccessful! Something went wrong...", {
+          position: "top-right",
+          autoClose: false, // Adjust the duration as needed (in milliseconds)
+        });
+      });
   };
 
   const handleTogglePassword = () => {
