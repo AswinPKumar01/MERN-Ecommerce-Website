@@ -22,6 +22,7 @@ import Profile from "./pages/Profile";
 import About from "./pages/About";
 import CRUD from "./pages/CRUD";
 import { inject } from "@vercel/analytics";
+
 inject();
 
 const App = () => {
