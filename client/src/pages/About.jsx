@@ -16,7 +16,6 @@ const Container = styled.div`
 const TeamInfo = styled.div`
   margin-top: 20px;
   font-size: 18px;
-  margin-bottom: 5px;
 `;
 
 const About = () => {
