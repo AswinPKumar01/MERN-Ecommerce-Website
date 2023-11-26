@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const User = require("../models/User");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs"); // Change the import statement to use bcryptjs
 const jwt = require("jsonwebtoken");
 
 // REGISTER

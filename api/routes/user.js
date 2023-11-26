@@ -1,4 +1,4 @@
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs"); // Change the import statement to use bcryptjs
 const {
   verifyTokenAndAuthorization,
   verifyTokenAndAdmin,
@@ -6,7 +6,7 @@ const {
 const User = require("../models/User"); // Import the User model
 const router = require("express").Router();
 
-//UPDATE
+// UPDATE
 router.put("/:id", verifyTokenAndAuthorization, async (req, res) => {
   if (req.body.password) {
     try {

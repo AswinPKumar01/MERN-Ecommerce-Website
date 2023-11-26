@@ -9,11 +9,21 @@ const cartRoute = require("./routes/cart");
 const orderRoute = require("./routes/order");
 const stripeRoute = require("./routes/stripe");
 const cors = require("cors");
+const bcrypt = require("bcryptjs");
 
 dotenv.config();
 
+app.use(
+  cors({
+    origin: [],
+    methods: ["POST", "GET", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
 mongoose
-  .connect(process.env.MONGO_URL)
+  .connect(
+    "mongodb+srv://aswinpkumar03:W3LwrfhgcCXv99mL@cluster0.aly6ghh.mongodb.net/"
+  )
   .then(() => console.log("DB Connection Successful"))
   .catch((err) => {
     console.log(err);
