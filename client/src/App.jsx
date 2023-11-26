@@ -28,7 +28,6 @@ inject();
 const App = () => {
   const user = useSelector((state) => state.user.currentUser);
 
-  axios.defaults.withCredentials = true;
   return (
     <Router>
       <Routes>
