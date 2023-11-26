@@ -23,12 +23,7 @@ app.use(
 
 mongoose
   .connect(
-    "mongodb+srv://aswinpkumar03:W3LwrfhgcCXv99mL@cluster0.aly6ghh.mongodb.net/",
-    {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-      dbName: "Cluster0",
-    }
+    "mongodb+srv://aswinpkumar03:W3LwrfhgcCXv99mL@cluster0.aly6ghh.mongodb.net/"
   )
   .then(() => console.log("DB Connection Successful"))
   .catch((err) => {
