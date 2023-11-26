@@ -20,15 +20,21 @@ app.use(
     credentials: true,
   })
 );
+
 mongoose
   .connect(
-    "mongodb+srv://aswinpkumar03:W3LwrfhgcCXv99mL@cluster0.aly6ghh.mongodb.net/"
+    "mongodb+srv://aswinpkumar03:W3LwrfhgcCXv99mL@cluster0.aly6ghh.mongodb.net/",
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      dbName: "Cluster0",
+    }
   )
   .then(() => console.log("DB Connection Successful"))
   .catch((err) => {
-    console.log(err);
+    console.error("DB Connection Error:", err);
   });
-app.use(cors());
+
 app.use(express.json());
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
