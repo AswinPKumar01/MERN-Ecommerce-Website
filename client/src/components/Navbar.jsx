@@ -134,7 +134,7 @@ const Navbar = () => {
       });
       // Navigate to the home page or any other page after successful logout
       // Replace '/home' with the desired route
-      navigate("/");
+      navigate("home");
     } catch (error) {
       toast.error("Logout Unsuccessful! Something went wrong...", {
         position: "top-right",
@@ -152,11 +152,11 @@ const Navbar = () => {
     <Container>
       <Wrapper>
         <LeftDiv>
-          <SiteName to="/">QuinTech Ecom</SiteName>
+          <SiteName to="home">QuinTech Ecom</SiteName>
         </LeftDiv>
 
         <CenterDiv>
-          <LinkOption to="/">HOME</LinkOption>
+          <LinkOption to="home">HOME</LinkOption>
           <LinkOption to="/buy">BUY</LinkOption>
           <LinkOption to="/crud">DASHBOARD</LinkOption>
           <LinkOption to="/about">ABOUT US</LinkOption>
