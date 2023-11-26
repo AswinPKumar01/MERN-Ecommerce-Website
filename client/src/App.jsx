@@ -31,7 +31,6 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
         <Route path="/products/:category" element={<ProductPage />} />
         <Route path="/product/:id" element={<Product />} />
         <Route path="/users/:id" element={<Profile />} />
