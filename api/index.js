@@ -15,7 +15,7 @@ dotenv.config();
 
 app.use(
   cors({
-    origin: [],
+    origin: ["https://quintech-backend.vercel.app"],
     methods: ["POST", "GET", "PUT", "DELETE"],
     credentials: true,
   })
